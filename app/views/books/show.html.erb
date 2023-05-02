@@ -10,7 +10,7 @@
     <div class='col-md-8 offset-md-1'>
   		<h2>Book detail</h2>
   		<table class='table'>
-  		  <tr id="book_<%= @book.id %>">
+  		  <tr class="book_<%= @book.id %>">
           <td><%= link_to user_path(@user) do %>
             <%= image_tag @user.get_profile_image, size:"100x100" %><br>
             <%= @user.name %>
@@ -26,7 +26,7 @@
           <% end %>
         </tr>
         <tr>
-          <td class="book_comments"><%= render "book_comments/comments", books: @books, user: @user %></td>
+          <td class="book_comments"><%= render "book_comments/comments", books: @books %></td>
         </tr>
       </table>
       <%= form_with model: [@books, @book_comment], local: false do |f| %>
